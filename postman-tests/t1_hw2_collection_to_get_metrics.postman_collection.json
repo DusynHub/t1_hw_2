@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "85dd54d5-60f5-4b3e-9d2c-59e35f5d6ab3",
+    "name": "t1_hw2_collection_to_get_metrics",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25271283"
+  },
+  "item": [
+    {
+      "name": "Get avg voltage value for last minute",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/voltage/minute-avg",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "voltage",
+            "minute-avg"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get max temperature value for last minute",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/temperature/minute-max",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "temperature",
+            "minute-max"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get avg voltage value for last minute",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/voltage/hour-avg",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "voltage",
+            "hour-avg"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get max temperature value for last hour",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/temperature/hour-max",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "temperature",
+            "hour-max"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get avg voltage value for last day",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/voltage/day-avg",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "voltage",
+            "day-avg"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get max temperature value for last day",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/temperature/hour-max",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "temperature",
+            "hour-max"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get power metrics for period fom  2024-03-24T00:00:00 to 2024-04-30T00:00:00",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.be.ok;",
+              "});",
+              "",
+              "pm.test(\"Test list products response\", function () {",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "    var jsonData = pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/metrics/power/by-period?start=2024-03-24T00:00:00&end=2024-04-30T00:00:00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "metrics",
+            "power",
+            "by-period"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2024-03-24T00:00:00"
+            },
+            {
+              "key": "end",
+              "value": "2024-04-30T00:00:00"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081",
+      "type": "string"
+    }
+  ]
+}

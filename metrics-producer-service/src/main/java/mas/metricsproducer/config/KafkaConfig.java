@@ -36,30 +36,6 @@ public class KafkaConfig {
                 .build();
     }
 
-//    @Bean
-//    public NewTopic voltageTopic() {
-//        return TopicBuilder.name("metric-voltage")
-//                .partitions(5)
-//                .replicas(1)
-//                .config(
-//                        TopicConfig.RETENTION_MS_CONFIG,
-//                        String.valueOf(Duration.ofDays(7).toMillis())
-//                )
-//                .build();
-//    }
-//
-//    @Bean
-//    public NewTopic powerTopic() {
-//        return TopicBuilder.name("metric-power")
-//                .partitions(5)
-//                .replicas(1)
-//                .config(
-//                        TopicConfig.RETENTION_MS_CONFIG,
-//                        String.valueOf(Duration.ofDays(7).toMillis())
-//                )
-//                .build();
-//    }
-
     @Bean
     public SenderOptions<String, Object> senderOptions() {
         Map<String, Object> props = new HashMap<>(3);

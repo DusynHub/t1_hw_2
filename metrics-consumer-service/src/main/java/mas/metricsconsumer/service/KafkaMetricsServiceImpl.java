@@ -1,9 +1,9 @@
 package mas.metricsconsumer.service;
 
-import mas.metricsconsumer.model.Metric;
-import mas.metricsconsumer.repository.MetricRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import mas.metricsconsumer.model.Metric;
+import mas.metricsconsumer.repository.MetricRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,7 +15,7 @@ public class KafkaMetricsServiceImpl implements KafkaMetricsService {
 
     @Override
     public void handle(Metric metric) {
-        log.info("Metric object {} was saved", metric);
+        log.info("[Kafka Metric Service] Metric object {} was saved", metric);
         metricRepository.save(metric);
     }
 

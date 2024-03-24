@@ -1,11 +1,11 @@
 package mas.metricsconsumer.service;
 
-import mas.metricsconsumer.config.LocalDateTimeDeserializer;
-import mas.metricsconsumer.model.Metric;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import mas.metricsconsumer.config.LocalDateTimeDeserializer;
+import mas.metricsconsumer.model.Metric;
 import org.springframework.stereotype.Service;
 import reactor.kafka.receiver.KafkaReceiver;
 

@@ -17,13 +17,11 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class KafkaConfig {
 
+    private final XML settings;
     @Value("${spring.kafka.bootstrap-servers}")
     private String servers;
-
     @Value("${topics}")
     private List<String> topics;
-
-    private final XML settings;
 
     @Bean
     public Map<String, Object> receiverProperties() {
