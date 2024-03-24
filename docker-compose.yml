@@ -1,0 +1,67 @@
+version: '3.1'
+
+
+volumes:
+  kafka-data:
+    driver: local
+  zookeeper-data:
+    driver: local
+
+
+services:
+  metrics-producer-service:
+    build:
+      context: .
+      dockerfile: ./metrics-producer-service/Dockerfile
+    image: metrics-producer-service
+    container_name: metrics-producer-service
+    ports:
+      - '8081:8081'
+    depends_on:
+      - metrics-consumer-service
+
+  metrics-consumer-service:
+    build:
+      context: .
+      dockerfile: ./metrics-consumer-service/Dockerfile
+    image: metrics-consumer-service
+    container_name: metrics-consumer-service
+    ports:
+      - '8082:8082'
+    depends_on:
+      - t2hw-db
+      - kafka
+
+  zookeeper:
+    image: 'wurstmeister/zookeeper'
+    ports:
+      - '2181:2181'
+    volumes:
+      - zookeeper-data:/var/lib/zookeeper/data
+
+  kafka:
+    image: 'wurstmeister/kafka'
+    depends_on:
+      - zookeeper
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT, PLAINTEXT_INTERNAL:PLAINTEXT
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+    ports:
+      - '9092:9092'
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+
+  t2hw-db:
+    image: postgres:15.3-alpine
+    container_name: t2hw-db
+    ports:
+      - '6432:5432'
+    environment:
+      - POSTGRES_DB=t1_hw_2
+      - POSTGRES_USER=masfuj
+      - POSTGRES_PASSWORD=jfejfe11
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
