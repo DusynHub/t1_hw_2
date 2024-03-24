@@ -4,10 +4,10 @@
 
 **ВАЖНЫЕ ЗАМЕЧАНИЕ**
 
-+ В учебных целях при каждом запуске приложения таблицы в базе данныхе пересоздаются.
++ В учебных целях при каждом запуске приложения таблицы в базе данные пересоздаются.
 
 <details>
-<summary>Какая ахитектура проекта?</summary>
+<summary>Какая архитектура проекта?</summary>
 
 + Модуль `metrics-producer-service` при отправке запроса
   на эндпоинт  
@@ -27,7 +27,7 @@
 Начинает направлять каждую 1 с случайню из трёх `POWER, VOLTAGE,TEMPERATURE`метрику в `kafka` модуль
 в топик `metrics-topic`
 
-+ Модуль `metrics-consumer-service` читает из `kafka` направленные метрики и сохраняет их вбазу данных
++ Модуль `metrics-consumer-service` читает из `kafka` направленные метрики и сохраняет их в базу данных
 + Модуль `metrics-consumer-service` предоставляет возможность узнать максимальные и средние значения метрик
   Необходимые эндпоинты представлены в документации в [swagger](http://localhost:8082/swagger-ui/index.html)
 
@@ -51,16 +51,16 @@
 
 <details>
 <summary>Как запустить тесты из папки postman-tests ?</summary>
-
 **Требования:** Наличие установленного `Postman` или `newman`
-
 + Импортировать коллекцию тестов в `Postman` в виде файлов
     - `t1_hw2_collection_to_produce_metrics.postman_collection.json`
     - `t1_hw2_collection_to_get_metrics.postman_collection.json`
 + Запустить проект
 + Запустить коллекцию `t1_hw2_collection_to_produce_metrics.postman_collection.json` в `Postman`  
   для того, чтобы `metrics-producer-service` начала ежесекундно генерировать метрики
-+ Запустить коллекцию `t1_hw2_collection_to_get_metrics.postman_collection.json` в `Postman`  
-  для того, чтобы получить аггрегированные метрики или просто перечень метрик
++ Для успешного получения результатов необходимо 10 - 20 секунд для получения результатов   
+  из `kafka`.  После `10 -20 сек` запустить коллекцию `t1_hw2_collection_to_get_metrics.postman_collection.json` в `Postman`  
+  для того, чтобы получить аггрегированные метрики или просто перечень метрик  
+  Тесты можно запускать многократно.
 
 </details>

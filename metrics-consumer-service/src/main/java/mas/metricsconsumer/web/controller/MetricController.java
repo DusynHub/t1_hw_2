@@ -94,7 +94,7 @@ public class MetricController {
                             array = @ArraySchema(schema = @Schema(implementation = MetricDto.class)))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}")
+    @GetMapping("/type/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public List<MetricDto> findAllByType(@Parameter(description = "metrics type") @PathVariable String metricType,
                                          @Parameter(description = "page number to be shown") @RequestParam(defaultValue = "0") @PositiveOrZero int page,
@@ -117,7 +117,7 @@ public class MetricController {
                             array = @ArraySchema(schema = @Schema(implementation = MetricDto.class)))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/by-period")
+    @GetMapping("by-period/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public List<MetricDto> findMetricsByTypeByPeriod(@PathVariable String metricType,
                                                      @Parameter(description = "period start") @RequestParam LocalDateTime start,
@@ -153,7 +153,7 @@ public class MetricController {
                             schema = @Schema(implementation = MetricValueDuringPeriodDto.class))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/minute-max")
+    @GetMapping("/minute-max/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public MetricValueDuringPeriodDto findMaxMetricValueLastMinute(@PathVariable String metricType) {
         log.info("[Metric Controller Consumer] received a request GET /metrics/{}/minute-max", metricType);
@@ -174,7 +174,7 @@ public class MetricController {
                             schema = @Schema(implementation = MetricValueDuringPeriodDto.class))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/hour-max")
+    @GetMapping("/hour-max/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public MetricValueDuringPeriodDto findMaxMetricValueLastHour(@PathVariable String metricType) {
         log.info("[Metric Controller Consumer] received a request GET /metrics/{}/hour-max", metricType);
@@ -195,7 +195,7 @@ public class MetricController {
                             schema = @Schema(implementation = MetricValueDuringPeriodDto.class))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/day-max")
+    @GetMapping("/day-max/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public MetricValueDuringPeriodDto findMaxMetricValueLastDay(@PathVariable String metricType) {
         log.info("[Metric Controller Consumer] received a request GET /metrics/{}/day-max", metricType);
@@ -217,7 +217,7 @@ public class MetricController {
                             schema = @Schema(implementation = MetricValueDuringPeriodDto.class))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/minute-avg")
+    @GetMapping("/minute-avg/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public MetricValueDuringPeriodDto findAvgMetricValueLastMinute(@PathVariable String metricType) {
         log.info("[Metric Controller Consumer] received a request GET /metrics/{}/minute-avg", metricType);
@@ -238,7 +238,7 @@ public class MetricController {
                             schema = @Schema(implementation = MetricValueDuringPeriodDto.class))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/hour-avg")
+    @GetMapping("/hour-avg/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public MetricValueDuringPeriodDto findAvgMetricValueLastHour(@PathVariable String metricType) {
         log.info("[Metric Controller Consumer] received a request GET /metrics/{}/hour-avg", metricType);
@@ -259,7 +259,7 @@ public class MetricController {
                             schema = @Schema(implementation = MetricValueDuringPeriodDto.class))}),
             @ApiResponse(responseCode = "400", description = "Wrong request")
     })
-    @GetMapping("/{metricType}/day-avg")
+    @GetMapping("/day-avg/{metricType}")
     @ResponseStatus(HttpStatus.OK)
     public MetricValueDuringPeriodDto findAvgMetricValueLastDay(@PathVariable String metricType) {
         log.info("[Metric Controller Consumer] received a request GET /metrics/{}/day-avg", metricType);
